@@ -28,6 +28,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const tabletForm = document.getElementById("leadFormTablet");
+  if (tabletForm) {
+    tabletForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const fields = document.getElementById("formFieldsTablet");
+      const successMsg = document.getElementById("formSuccessTablet");
+      if (fields) fields.classList.add("hidden");
+      if (successMsg) successMsg.classList.remove("hidden");
+      tabletForm.reset();
+    });
+    const tabletReset = document.getElementById("formResetTablet");
+    if (tabletReset) {
+      tabletReset.addEventListener("click", function () {
+        const fields = document.getElementById("formFieldsTablet");
+        const successMsg = document.getElementById("formSuccessTablet");
+        if (successMsg) successMsg.classList.add("hidden");
+        if (fields) fields.classList.remove("hidden");
+      });
+    }
+  }
+
   const mobileForm = document.getElementById("leadFormMobile");
   if (mobileForm) {
     mobileForm.addEventListener("submit", function (event) {

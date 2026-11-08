@@ -107,9 +107,22 @@
 .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
 .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
 
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #dfc384 0%, #c5a059 50%, #af8b43 100%);
+}
+
+.layout-tablet { display: none !important; }
+
 @media (max-width: 767px) {
-  .layout-desktop { display: none !important; }
+  .layout-desktop, .layout-tablet { display: none !important; }
 }
 @media (min-width: 768px) {
   .layout-mobile { display: none !important; }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .layout-desktop { display: none !important; }
+  .layout-tablet { display: block !important; }
+}
+@media (min-width: 1200px) {
+  .layout-tablet { display: none !important; }
 }
